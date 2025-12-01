@@ -75,18 +75,6 @@ browser-cookies.js
 
 Display all cookies for the current tab including domain, path, httpOnly, and secure flags. Use this to debug authentication issues or inspect session state.
 
-## Search Google
-
-```bash
-browser-search.js "rust programming"
-browser-search.js "climate change" -n 10
-browser-search.js "machine learning" -n 3 --content
-```
-
-Search Google and return results. Options:
-- `-n <num>` - Number of results (default: 5, supports pagination for higher numbers)
-- `--content` - Fetch and extract readable content as markdown from each result
-
 ## Extract Page Content
 
 ```bash
@@ -94,20 +82,3 @@ browser-content.js https://example.com
 ```
 
 Navigate to a URL and extract readable content as markdown. Uses Mozilla Readability for article extraction and Turndown for HTML-to-markdown conversion. Works on pages with JavaScript content (waits for page to load).
-
-## Search + Content Strategies
-
-**Use `browser-search.js --content`** when you want content from all search results in one go. This is faster but fetches content from possibly irrelevant results.
-
-```bash
-browser-search.js "climate change effects" -n 3 --content
-```
-
-**Use `browser-search.js` + `browser-content.js`** when you want to selectively fetch content from only relevant results. First search, review the titles/snippets, then fetch content only for promising URLs.
-
-```bash
-browser-search.js "climate change effects" -n 10
-# Review results, then fetch specific ones:
-browser-content.js https://relevant-article.com
-browser-content.js https://another-good-source.com
-```

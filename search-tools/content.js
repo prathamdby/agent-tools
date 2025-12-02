@@ -9,8 +9,8 @@ import { gfm } from "turndown-plugin-gfm";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { getChromePath, getChromeProfilePath } from "./platform.js";
-import { syncDirectory } from "./sync.js";
+import { getChromePath, getChromeProfilePath } from "../utils/platform.js";
+import { syncDirectory } from "../utils/sync.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 

@@ -4,8 +4,8 @@ import { spawn } from "node:child_process";
 import fs from "fs";
 import path from "path";
 import puppeteer from "puppeteer-core";
-import { getChromePath, getChromeProfilePath, getCacheDir } from "./platform.js";
-import { syncDirectory } from "./sync.js";
+import { getChromePath, getChromeProfilePath, getCacheDir } from "../utils/platform.js";
+import { syncDirectory } from "../utils/sync.js";
 
 const useProfile = process.argv[2] === "--profile";
 
